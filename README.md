@@ -17,7 +17,8 @@ Ici le projet en couche est un projet simple.
 
 La méthode createUser() de la couche dao capture les exceptions dans une classe appelée DatabaseException qui hérite de la classe Exception. Cela permet de spécialiser le traitement de ce type d'erreur dans une classe spécifique.
 Dans chaque 'catch' nous déterminons le type précis d'erreur pour capturer cette erreur dans une classe encore plus précise qui va hériter de la classe DatabaseException.(avec le mot clé 'throw NomDeLaClasse'.<br/>
-Ex:
-SQLDriverNotFoundException qui est utilisé quand le fichier (driver) n'est pas trouvé ou n'existe pas.
+Exemple:
+* **SQLDriverNotFoundException** qui est utilisé quand le fichier (driver) n'est pas trouvé ou n'existe pas.
+* **ConnexionDatabaseException** qui est utilisé lors d'une erreur pendant la connexion à la base de données.
 
 La classe UserService fonctionne de la même manière. La méthode creerUtilisateur capture les exceptions dans la classe ServiceException qui hérite aussi de la classe Exception et qui va permettre de propager la gestion de l'exception dans la couche présentation (main).  
