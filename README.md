@@ -1,9 +1,9 @@
 # propagation_exception
 
 ## Prerequis
-Projet archictecture en couche
-Driver mysql
-Base de données
+* Projet archictecture en couche
+* Driver mysql
+* Base de données
 
 ## fonctionnement
 la gestion de la propagation des exceptions se fait avec le mot clé 'throws NomDeLexception' dans la signature d'une méthode et permet de dire que cette méthode peut générer une exception mais que sont traitement ne se fera pas dans cette classe. Ainsi la gestion de l'erreur se fera dans la classe appellante. 
