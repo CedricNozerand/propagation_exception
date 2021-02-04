@@ -28,5 +28,9 @@ La classe UserService fonctionne de la même manière. La méthode creerUtilisat
 2. Création d'un utilisateur
 3. appelle de la méthode creerUtilisateur de la classe UserService avec l'utilisateur en paramètre
 4. Depuis la classe UserSrvice: appelle de la méthode createUser dela classe UserDao avec l'utilisateur en paramètre
-5. Définition de la propagationd'exception grace à la signature de la méthode: public boolean createUser(User user) **throws DatabaseException** ce qui permet de dire que les exceptions de cette méthode seront gérées dans la classe DatabaseException
-6. Dans les 'catch'de la méthode, capture des différents exception grace à la ligne suivante: **throw new ConnexionDatabaseException();** **et throw new SQLDriverNotFoundException();**
+5. Définition de la propagationd'exception grace à la signature de la méthode: public boolean createUser(User user) **throws DatabaseException** ce qui permet de dire que les exceptions de cette méthode sont de type **DatabaseException** et seront gérées dans la classe appellante: **UserService**
+6. Dans les 'catch' de la méthode, capture des différents exception grace à la ligne suivante: **throw new ConnexionDatabaseException();** et **throw new SQLDriverNotFoundException();** ce qui permet de spécialiser encore plus le traitement de chaque exception dans sa propre classe.
+7. L'exception est renvoyée à la classe **UserService**
+8. etc
+
+Cela permet d'envoyer un message proprement de la couche dao à la couche service sans à avoir à spécifier quoi que ce soit dans la couche service.
