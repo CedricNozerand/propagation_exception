@@ -5,7 +5,7 @@
 * Driver mysql
 * Base de données
 
-## fonctionnement
+## Fonctionnement
 la gestion de la propagation des exceptions se fait avec le mot clé 'throws NomDeLexception' dans la signature d'une méthode et permet de dire que cette méthode peut générer une exception mais que sont traitement ne se fera pas dans cette classe. Ainsi la gestion de l'erreur se fera dans la classe appellante. 
 Il est possible de creer soit même une classe Exception afin de spécialiser et personnaliser le traitement de chacune d'entre elles.
 
